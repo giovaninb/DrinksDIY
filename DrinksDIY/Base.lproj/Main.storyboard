@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="naE-a5-kQv">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drink DIY-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrinksDIY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Type your ingredient here..." translatesAutoresizingMaskIntoConstraints="NO" id="EEs-yB-xWE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KCS-XR-QUf">
+                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cocktail" rowHeight="150" id="Aqw-ps-dy5" customClass="CocktailViewCell" customModule="DrinksDIY" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Aqw-ps-dy5" id="uIi-cw-f4L">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FpM-KW-k7q">
+                                                    <rect key="frame" x="20" y="10" width="130" height="130"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="OMj-BW-VKL"/>
+                                                        <constraint firstAttribute="height" constant="130" id="Urh-6G-5xR"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGR-Nj-xF5">
+                                                    <rect key="frame" x="22" y="10" width="126" height="126"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="126" id="T6O-NY-7bE"/>
+                                                        <constraint firstAttribute="width" constant="126" id="o7t-qv-K2M"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rGR-Nj-xF5" firstAttribute="top" secondItem="uIi-cw-f4L" secondAttribute="top" constant="10" id="5W1-un-xWT"/>
+                                                <constraint firstItem="rGR-Nj-xF5" firstAttribute="centerX" secondItem="FpM-KW-k7q" secondAttribute="centerX" id="L1Z-kU-744"/>
+                                                <constraint firstItem="FpM-KW-k7q" firstAttribute="leading" secondItem="uIi-cw-f4L" secondAttribute="leading" constant="20" id="PXL-0p-jpS"/>
+                                                <constraint firstItem="rGR-Nj-xF5" firstAttribute="leading" secondItem="uIi-cw-f4L" secondAttribute="leading" constant="21" id="UgY-6n-Ji7"/>
+                                                <constraint firstAttribute="bottom" secondItem="FpM-KW-k7q" secondAttribute="bottom" constant="11.5" id="pOv-bB-iRi"/>
+                                                <constraint firstItem="FpM-KW-k7q" firstAttribute="top" secondItem="uIi-cw-f4L" secondAttribute="top" constant="10" id="sEI-6i-HSI"/>
+                                                <constraint firstAttribute="bottom" secondItem="rGR-Nj-xF5" secondAttribute="bottom" constant="13.5" id="uw1-PQ-udc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="drinkImage" destination="FpM-KW-k7q" id="lIR-rq-GnS"/>
+                                            <outlet property="whiteBorder" destination="rGR-Nj-xF5" id="dDV-L7-ON3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EEs-yB-xWE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4YN-mu-M63"/>
+                            <constraint firstItem="EEs-yB-xWE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="G7x-Nu-hnO"/>
+                            <constraint firstItem="KCS-XR-QUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GrJ-fl-ZOs"/>
+                            <constraint firstItem="EEs-yB-xWE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NU7-fN-gds"/>
+                            <constraint firstItem="KCS-XR-QUf" firstAttribute="top" secondItem="EEs-yB-xWE" secondAttribute="bottom" id="a2F-SZ-0QG"/>
+                            <constraint firstItem="EEs-yB-xWE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3r-Y0-Whc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KCS-XR-QUf" secondAttribute="bottom" id="nNQ-AM-88P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KCS-XR-QUf" secondAttribute="trailing" id="zlg-h6-zLV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Drink DIY" id="D55-Xk-gMV"/>
+                    <connections>
+                        <outlet property="tableView" destination="KCS-XR-QUf" id="avA-eV-PUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="uXw-0V-LVj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="naE-a5-kQv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" systemItem="search" id="wes-CG-8zY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uav-6J-QWc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hj0-gm-BfA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pCj-Di-bag" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="287" y="138"/>
+        </scene>
+    </scenes>
+</document>
