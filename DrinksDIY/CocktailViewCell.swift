@@ -18,11 +18,11 @@ class CocktailViewCell: UITableViewCell {
         super.awakeFromNib()
         
         self.whiteBorder.layer.cornerRadius = (whiteBorder.frame.width / 2)
-        self.whiteBorder.layer.borderWidth = 2
-        self.whiteBorder.layer.borderColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
+        self.whiteBorder.layer.borderWidth = 5
+        self.whiteBorder.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         
         self.drinkImage.layer.borderWidth = 5
-        self.drinkImage.layer.borderColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        self.drinkImage.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         self.drinkImage.layer.cornerRadius = (drinkImage.frame.width / 2)
         self.drinkImage.layer.masksToBounds = false
         self.drinkImage.clipsToBounds = true
