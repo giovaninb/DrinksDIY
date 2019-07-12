@@ -75,7 +75,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="describLabel" destination="hg2-XN-ahp" id="7hp-9S-Tla"/>
                                             <outlet property="drinkImage" destination="FpM-KW-k7q" id="lIR-rq-GnS"/>
+                                            <outlet property="nameDrinkLabel" destination="3Ec-tT-J72" id="Vc0-74-Mpm"/>
                                             <outlet property="whiteBorder" destination="rGR-Nj-xF5" id="dDV-L7-ON3"/>
                                         </connections>
                                     </tableViewCell>
