@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         self.refresher.endRefreshing()
     }
     
-    @IBAction func tappedImage(_ sender: UIButton) {
+    @IBAction func tapButton(_ sender: UIButton) {
         let alert = UIAlertController(title: "Alcoholic", message: "This is an alcoholic beverage.", preferredStyle: .alert)
         self.present(alert, animated: true)
         
@@ -111,8 +111,8 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
             alert.dismiss(animated: true, completion: nil)
         })
-        
     }
+
     
 }
 

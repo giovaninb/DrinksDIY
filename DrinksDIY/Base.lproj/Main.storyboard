@@ -33,17 +33,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="rXq-ra-Uj2">
-                                                    <rect key="frame" x="140" y="31" width="234" height="88"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rXq-ra-Uj2">
+                                                    <rect key="frame" x="165" y="31" width="209" height="88"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Cocktail" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3Ec-tT-J72">
-                                                            <rect key="frame" x="0.0" y="0.0" width="234" height="26.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="209" height="39"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bla bla" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg2-XN-ahp">
-                                                            <rect key="frame" x="0.0" y="61.5" width="234" height="26.5"/>
+                                                            <rect key="frame" x="0.0" y="49" width="209" height="39"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -57,10 +57,22 @@
                                                             <rect key="frame" x="5" y="5" width="90" height="90"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-wK-3ec">
+                                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="90" id="Cxd-Ua-zl2"/>
+                                                                <constraint firstAttribute="width" constant="90" id="bjq-DJ-lyo"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KBb-Lh-ejf"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="66y-AQ-Py6"/>
+                                                        <constraint firstItem="Tx3-wK-3ec" firstAttribute="centerX" secondItem="rGR-Nj-xF5" secondAttribute="centerX" id="Ay3-Fe-7Ns"/>
                                                         <constraint firstAttribute="height" constant="100" id="QVx-OZ-jCn"/>
+                                                        <constraint firstItem="Tx3-wK-3ec" firstAttribute="centerY" secondItem="rGR-Nj-xF5" secondAttribute="centerY" id="lSu-D6-jTZ"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -71,7 +83,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="rXq-ra-Uj2" secondAttribute="trailing" constant="20" id="M07-K0-2pN"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="rXq-ra-Uj2" secondAttribute="bottom" constant="20" id="NCU-DB-hzs"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="rGR-Nj-xF5" secondAttribute="bottom" constant="10" id="Oo5-IP-awp"/>
-                                                <constraint firstItem="rXq-ra-Uj2" firstAttribute="leading" secondItem="rGR-Nj-xF5" secondAttribute="trailing" constant="10" id="iPS-mu-Iaq"/>
+                                                <constraint firstItem="rXq-ra-Uj2" firstAttribute="leading" secondItem="rGR-Nj-xF5" secondAttribute="trailing" constant="35" id="iPS-mu-Iaq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
