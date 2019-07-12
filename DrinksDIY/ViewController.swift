@@ -8,6 +8,22 @@
 
 import UIKit
 
+class DataTest {
+    var imageUrl: String
+    var image: UIImage?
+    
+    init(imageUrl: String, image: UIImage?) {
+        self.imageUrl = imageUrl
+        self.image = image
+    }
+    
+    var dataSource: [DataTest] = [DataTest(imageUrl: "https://www.thecocktaildb.com/images/ingredients/ice-Small.png", image: nil)]
+    
+    
+    
+}
+
+
 // MARK: - Drinks
 struct Drinks: Codable {
     let drinks: [Drink]
@@ -43,6 +59,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+       
+        
         tableView.dataSource = self
         tableView.refreshControl = refresher
         tableView.delegate = self
@@ -50,14 +68,7 @@ class ViewController: UIViewController {
 
         search.delegate = self
         
-//        for data in dataSource {
-//            downloadImage(from: URL(string: data.imageUrl)!, completion: { image in
-//                data.image = image
-//                DispatchQueue.main.async {
-//                    self.tableView.reloadData()
-//                }
-//            })
-//        }
+        
         
     }
     
@@ -68,6 +79,11 @@ class ViewController: UIViewController {
 
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destination = segue.destination as! CustomViewController
+//        destination.
+//    }
+    
     
     
 }
@@ -76,7 +92,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate, UISearchB
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return drinks.count
     }
-    
+
   
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -86,44 +102,22 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate, UISearchB
         let drink = drinks[indexPath.row]
         cell?.nameDrinkLabel.text = drink.strDrink
         cell?.describLabel.text = drink.strCategory
-        cell?.drinkImage.image = UIImage(data: try! Data(contentsOf: URL(string: drink.strDrinkThumb)!))
-//        cell?.drinkImage.image =
         
+        DispatchQueue.global(qos: .background).async {
+            let data = try! Data(contentsOf: URL(string: drink.strDrinkThumb)!)
+            DispatchQueue.main.async {
+                cell?.drinkImage.image = UIImage(data: data)
+                
+            }
+        }
+    
    
         
         return cell!
 
     }
-
-    class DataTest {
-        var imageUrl: String
-        var image: UIImage?
-        
-        init(imageUrl: String, image: UIImage?) {
-            self.imageUrl = imageUrl
-            self.image = image
-        }
-        
-        var dataSource: [DataTest] = [DataTest(imageUrl: "https://www.thecocktaildb.com/images/ingredients/ice-Small.png", image: nil)]
-        
-        
-        
-    }
-    
    
-    
-//    func downloadImage(from url: URL, completion: @escaping (UIImage) -> Void)  {
-//        print("Download Started")
-//        getData(from: url) { data, response, error in
-//            print("Download notgg")
-//            guard let data = data, error == nil else { return }
-//            print("Download gg")
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            completion(UIImage(data: data)!)
-//
-//        }
-//    }
-    
+  
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
         let query = searchBar.text?.lowercased()
@@ -135,7 +129,27 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate, UISearchB
 
     }
     
+    func downloadImage(from url: URL, completion: @escaping (UIImage) -> Void)  {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            print("Download notgg")
+            guard let data = data, error == nil else { return }
+            print("Download gg")
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            completion(UIImage(data: data)!)
+            
+        }
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            print("Download finished")
+            completion(data, response, error)
+            }.resume()
+    }
+    
     func getMethod(urlQuery: String) {
+       
         var request = URLRequest(url: URL(string: urlQuery)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -149,6 +163,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate, UISearchB
                 DispatchQueue.main.async {
                     
                     self.tableView.reloadData()
+                    
                 }
                 
             }
