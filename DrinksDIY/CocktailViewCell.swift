@@ -20,15 +20,14 @@ class CocktailViewCell: UITableViewCell {
         super.awakeFromNib()
         
         self.whiteBorder.layer.cornerRadius = (whiteBorder.frame.width / 2)
-        self.whiteBorder.layer.borderWidth = 5
-        self.whiteBorder.layer.borderColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        self.whiteBorder.layer.borderWidth = 4
+        //self.whiteBorder.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        self.drinkImage.layer.borderWidth = 5
-        self.drinkImage.layer.borderColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        self.drinkImage.layer.borderWidth = 2
+        self.drinkImage.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.drinkImage.layer.cornerRadius = (drinkImage.frame.width / 2)
         self.drinkImage.layer.masksToBounds = false
         self.drinkImage.clipsToBounds = true
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
